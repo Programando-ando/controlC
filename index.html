@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Calorias</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="img/kalorias.jpg">
+</head>
+<body class="text-center">
+    <nav class="navbar bg-success">
+    <div class="container">
+      <h1 class="navbar-brand m-auto w-100">Control de Calorias</h1>
+    </div>
+  </nav>
+  <br>
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+            <center>
+                <label for="">CATEGORÍA</label>
+                <select id="cate" class="form-control w-75 m-auto">
+                    <option value="Comida">Comida</option>
+                    <option value="Ejercicio">Ejercicio</option>
+                    </select><br>
+                <label for="">ACTIVIDAD</label>
+                <input type="text" id="activi" class="form-control w-75 m-auto" placeholder="Ej. Hice ejercicio una hora"/><br>
+                  <label for="">CALORIAS</label>
+                  <input type="number" id="cal" placeholder="0" class="form-control w-75 m-auto"/><br>
+                  <button class="btn btn-success" id="calcular" onclick="guardar()">Calcular Calorias</button>
+              </center>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+            <center>
+                <h3>Resumen de calorias</h3>
+                <table class="table">
+                  <tr>
+                    <td>Calorias:</td>
+                    <td>Ejercicio:</td>
+                    <td>Diferencia:</td>
+                  </tr>
+                  <tr>
+                    <td><b id="calo">0</b></td>
+                    <td><b id="ejer">0</b></td>
+                    <td><b id="dif">0</b></td>
+                  </tr>
+                </table>
+            </center>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+  <div id="actividades">
+    <h2>Comidas y Actividades</h2><br>
+    <h3 id="actividad">Aun no hay actividades o comidas</h3>
+  </div>
+
+  <!-- Button trigger modal 
+<button type="button" class="btn btn-primary" >
+  Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <center>
+          <label for="">CATEGORÍA</label>
+          <select id="ecate" class="form-control w-75 m-auto">
+              <option value="Comida">Comida</option>
+              <option value="Ejercicio">Ejercicio</option>
+              </select><br>
+          <label for="">ACTIVIDAD</label>
+          <input type="text" id="eactivi" class="form-control w-75 m-auto" placeholder="Ej. Hice ejercicio una hora"/><br>
+            <label for="">CALORIAS</label>
+            <input type="number" id="ecal" placeholder="0" class="form-control w-75 m-auto"/><br>
+        </center>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success" id="actualiza" data-bs-dismiss="modal" onclick="actualizar()">Actualizar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/sweetalert2@11.js"></script>
+  <script src="js/app.js"></script>
+  </body>
+</html>
